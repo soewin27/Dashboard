@@ -20,5 +20,5 @@ app.listen(PORT, () => {
 })
 
 
-
-
+const userRoute=require("./routes/v1/userRoute")
+app.use("/api/v1/total",userRoute)
