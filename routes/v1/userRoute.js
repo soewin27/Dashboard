@@ -3,6 +3,6 @@ const router=require("express").Router();
 
 router
     .route("/")
-    .get(userController.allUsers)
+    .get(userController.displayUser)
 
 module.exports=router;

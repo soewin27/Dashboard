@@ -21,6 +21,9 @@ app.listen(PORT, () => {
 
 
 const userRoute=require("./routes/v1/userRoute")
-app.use("/api/v1/total",userRoute)
 const locationRoute=require("./routes/v1/locationRoute")
-app.use("/api/v1/location",locationRoute)
+const totalRoute=require("./routes/v1/totalRoute")
+
+app.use("/api/v1/users",userRoute)
+app.use("/api/v1/locations",locationRoute)
+app.use("/api/v1/total",totalRoute)

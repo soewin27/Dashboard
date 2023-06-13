@@ -5,6 +5,7 @@ router
     .route("/")
     .get(locationController.alllocation)
     .post(locationController.createLocation)
+    .get(locationController.filterlocation)
 
 router  
     .route("/:id")

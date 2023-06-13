@@ -98,13 +98,31 @@ const deleteLocation=async(req,res) =>{
             })
         }
         await Location.destroy({where:{id}})
-        const data=Location.findAll();
         res.status(200).send({
             status:true,
             message:"Deleted Successfully"
         })
     } catch (error) {
-        
+        res.json({
+            status:false,
+            error:error
+        })
+    }
+}
+const filterlocation=async (req,res) =>{
+    try {
+        console.log(req.query)
+        const locations=await Location.findAll()
+        res.json({
+            status:true,
+            data:locations
+        })
+    } catch (error) {
+        console.log(error)
+        res.json({
+            status:false,
+            error:error
+        })
     }
 }
 module.exports={
@@ -112,5 +130,6 @@ module.exports={
     selectedlocation,
     createLocation,
     updateLocation,
-    deleteLocation
+    deleteLocation,
+    filterlocation
 }
