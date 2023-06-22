@@ -3,7 +3,6 @@ const User = db.User;
 const Post = db.Post;
 const dateFilter = require("../../helpers/dateFilter");
 const { Op } = require("sequelize");
-const { where } = require("sequelize");
 const allUsers = async (req, res) => {
   try {
     const { from, to } = req.query;
