@@ -5,6 +5,9 @@ router
     .route("/")
     .get(locationController.alllocation)
     .post(locationController.createLocation)
+ 
+router
+    .route("/test")
     .get(locationController.filterlocation)
 
 router  

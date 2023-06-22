@@ -112,11 +112,20 @@ const deleteLocation=async(req,res) =>{
 const filterlocation=async (req,res) =>{
     try {
         console.log(req.query)
-        const locations=await Location.findAll()
-        res.json({
-            status:true,
-            data:locations
-        })
+
+            const locations=await Location.findAll({where:req.query})
+            res.json({
+                status:true,
+                data:locations
+            })
+
+            // const locations=await Location.findAll({where:{parentId:req.query.parentId,name:req.query.name}})
+            // res.json({
+            //     status:true,
+            //     message:"condition2 is effected",
+            //     data:locations
+            // })
+
     } catch (error) {
         console.log(error)
         res.json({
